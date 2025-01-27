@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+@import 'base';
+
+header {
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: $primary-color;
+        padding: $spacing;
+
+        a {
+            color: rgb(255, 102, 0);
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+h1 {
+    color: $primary-color;
+}
+
+button {
+    @include button($primary-color, rgb(208, 255, 0));
+}
+
+/* _variables.scss */
+$primary-color: #3498db;
+$font-family: 'Arial, sans-serif';
+$spacing: 16px;
+
+/* _mixins.scss */
+@mixin button($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $spacing;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* _base.scss */
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: #ff00ff;
+}
+
+nav a {
+    margin-right: $spacing;
+}
